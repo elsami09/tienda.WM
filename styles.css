@@ -1,0 +1,495 @@
+*{
+    box-sizing: border-box;
+scroll-behavior: smooth;
+}
+
+body{
+    font-family: "montserrat";
+    background-color: #0e2c5ac0;
+    color: #101632ed;
+    scroll-behavior: smooth;
+}
+
+div,ul,nav,body,footer,a,li,label{
+    margin: 0;
+scroll-behavior: smooth;
+    padding: 0;
+}
+/*-----------HEADER SECTION-------*/
+
+.header{
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    container-type: inlane-size;
+    container-name: header;
+    font-size: 20PX;
+    z-index: 10;
+}
+
+.header-open-nav-botton{
+    color: #48e;
+    font-size: 3rem;
+    font-weight: 600;
+    position: absolute;
+    right: 10px;
+    z-index: 2;
+}
+.header__checkbox{
+    display: none;
+}
+
+.header__nav{
+    display: none;
+        background-color: #ffffff;
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    z-index:1;
+}
+
+.header__nav-list{
+    display: flex;
+    flex-direction: column;
+    height: 40vh;
+    margin: auto;
+    justify-content: space-around;
+}
+
+.header__checkbox:checked ~ .header__nav{
+    display: flex;
+
+}
+
+.header__logo{
+max-width: 100%;
+width: 64px;
+margin: 10px 20px ;
+}
+.header__logo-container{
+    margin-left: -80%;
+    z-index: 2;
+}
+
+
+.header__nav-item{
+    list-style: none;
+margin-left: 20px;
+} 
+
+
+.header__nav-item a{
+    color: #48e;
+    text-decoration: none;
+
+}
+
+.header__nav-item{
+    border-radius: 8px;
+    padding:0 50px 0 50px;
+}
+
+.header__nav-item :is(:hover,:active){
+    text-decoration: underline;
+}
+
+
+/*------HEADER QUERIES-----*/
+
+@media (min-width:600px){
+
+    .header{
+        padding: 20px 0;
+        animation: header-movement both;
+        position: sticky;
+        animation-timeline: scroll();
+        top: 0;
+        animation-range:  10px 100px;
+    }
+
+.header__nav{
+    background-color: initial;
+    display: block;
+    position: static;
+    height: auto;
+    z-index: 1;
+}
+
+.header__nav-list{
+    flex-direction: row;
+    height: auto;
+    justify-content: end;
+    gap: 10px;
+}
+
+.header__nav-item{
+
+    padding: 10px;
+    min-width: 50px;
+    text-align: center;
+    margin: 0;
+margin-right: 20px;
+
+}
+
+.header__nav-item:hover{
+opacity: 0.8;
+}
+
+.header-open-nav-botton{
+display: none;
+}
+
+.header__logo-container{
+margin-left: 0;
+}
+
+}
+
+/*----------HEADER ENDS----*/
+
+
+/*------------PORFILE SECTION------*/
+
+.profile{
+    display: flex;
+}
+
+.profile__description{
+    height: 200px;
+    text-align: center;
+    background-color: #fffffffa;
+z-index: -1;
+}
+
+.profile__wrapper{
+    display: flex;
+flex-direction: column;
+    align-items: center;
+    background-color: #48e;
+}
+
+.profile__img-container{
+max-width: 500px;
+height: auto;
+background-color: #fff;
+text-align: center;
+}
+
+.profile__img{
+width: 100%;
+margin: 0;
+}
+.span{
+    text-transform: uppercase;
+}
+
+.profile__item-box{
+min-width: 200px;
+height: auto;
+background-color: #4ca8e6;
+    text-align: center;
+padding: 10px;
+border-radius: 10px;
+box-shadow:  0 0 40px #000000b4;
+margin-top: 20px;
+outline: 3px solid #48e;
+}
+
+
+h1{
+    font-size: 35px;
+    margin: 0;
+}
+
+.taladro{
+margin: 10px;
+border-radius: 5px;
+
+}
+
+
+.Pintura-Acrílica{
+    width: 100%;
+max-width: 250px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.404);
+}
+
+.Motosierra{
+    max-width: 100%;
+border-bottom:4px solid rgba(0, 0, 0, 0.788);
+}
+
+
+/*------PROFILE QUERIES-----*/
+
+
+@media (min-width:700px){
+
+    .profile{
+        flex-direction: row;
+    animation: aparecer 3s -.6s both ;
+
+    }
+
+.profile__wrapper{
+flex-direction: row;
+        align-items: inherit;
+
+}
+
+.profile__list-item{
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #010a1f7a;
+}
+
+.profile__item-box{
+max-width: 400px;
+margin: 20px;
+}
+
+
+.profile__img-container{
+position: sticky;
+top: 2px;
+background-color: #fff;
+max-width: 400px;
+max-height: 630px;
+text-align: center;
+}
+
+.profile__img{
+border:3px solid  #4ca8e6;
+}
+
+}
+
+
+/*------------PORFILE ENDS------*/
+
+
+/*------------PORTFOLIO SECTION------*/
+
+
+.portfolio{
+    background-color: #0d2050;
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+        text-align: center;
+}
+
+.portfolio__project-container{
+    display: grid;
+    grid-template-columns: 1fr;
+    max-width: 1300px;
+    margin: auto;
+    width: 100%;
+    gap: 12px;
+    padding: 12px;
+min-height: 90vh;
+}
+
+.portfolio__project{
+    background-image: linear-gradient(#0009,#0009),url("construccion\ de\ fondo.jpg");
+background-position: center;
+background-size: cover;
+display: grid;
+place-content:center;
+transition: outline .2s;
+border-radius: 8px;
+animation:  aparecer both;
+animation-timeline: view();
+animation-range: cover 10%  cover 40%;
+}
+
+.portfolio__titel{
+font-size: 3rem;
+}
+
+.portfolio__project:hover{
+    opacity: 0.75;
+    outline: 2px solid #fff;
+}
+
+/*------------PORTFOLIO QUERIES------*/
+
+
+@media (min-width:55.25rem){
+.portfolio__project-container{
+    grid-template-columns: repeat(auto-fill,minmax(400px,1fr));
+}
+.portfolio__project:first-child{
+    grid-column:span 2;
+}
+
+.portfolio__project:last-child{
+    grid-column:span 2;
+
+}
+
+
+}
+
+
+
+@media (min-width:81.25rem){
+.portfolio__project-container{
+    grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+}
+.portfolio__project:first-child{
+    grid-column:span 2;
+    grid-row: span 2;
+}
+
+.portfolio__project:last-child{
+    grid-column:span 4;
+
+}
+
+}
+
+/*------------PORTFOLIO ENDS------*/
+
+
+/*------------CONTACT SECTION------*/
+
+
+.from{
+    min-height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 0;
+    background-color: #ffffffad;
+}
+
+.from__from{
+    display: grid;
+flex: 1;
+padding: 12px;
+    max-width: 600px;
+    width: 100%;
+    margin-bottom: 30px;
+    box-shadow:2px 2px 4px #0003;
+    animation:  aparecer both;
+animation-timeline: view();
+animation-range: cover 20% contain 50%  ;
+
+}
+
+.from__input-container :is(input,textarea){
+width: 100%;
+padding:9px ;
+font-size: 16px;
+margin: 4px;
+border: none;
+    background-image: linear-gradient(#7ab3e2d0,#fcfcfcb0);
+box-shadow:2px 2px 4px #0003;
+}
+
+.from__input-container textarea{
+    resize: none;
+    height: 120px;
+    font-family: inherit;
+}
+
+.from__input-container input[type="subtmit"]{
+    background-color: #48e;
+    color: #fff;
+}
+
+.from__titel{
+font-size: 50px;
+}
+
+/*-------CONTECT QUERIES---------*/
+
+@media (min-width:56.25rem){
+    
+.from__from{
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+    "name lastname"
+    "email email"
+    "message message"
+    "button button";
+    gap: 20px;
+    box-shadow:  0 0 40px #0006;
+    border-radius: 4px;
+}
+
+.from__input-container:first-child{
+    grid-area: name;
+}
+
+.from__input-container:nth-child(2){
+    grid-area: lastname;
+}
+
+.from__input-container:nth-child(3){
+    grid-area: email;
+}
+
+.from__input-container:nth-child(4){
+    grid-area: message;
+}
+
+.from__input-container:last-child{
+    grid-area: button;
+}
+
+
+}
+
+
+/*-------CONTECT ENDS------*/
+
+
+/*----------ANIMATIONES----*/
+
+@keyframes header-movement{
+    from{
+        padding: 10px 0;
+        background-color: #fff;
+    }
+
+    to{
+        padding:  0px;
+        background-color: #0006;
+
+    }
+}
+
+
+@keyframes aparecer{
+    from{
+        opacity: 0;
+    }
+
+    to{
+    opacity: 1;
+
+    }
+}
+
+
+
+
+
+
+/*-------FOOTER SECTION------*/
+
+footer{
+    padding: 60px;
+    text-align: center;
+    background-color: #0d2050;
+    color: #fffd;
+    font-size: 22px;
+}
